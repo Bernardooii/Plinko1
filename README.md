@@ -1,1 +1,1 @@
-# Plinko1
+# pinko1-modelo
