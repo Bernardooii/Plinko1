@@ -5,6 +5,7 @@ var Engine = Matter.Engine,
 var balls = [];
 var plinkos = [];
 var divisions =[];
+var particles = [];
 var ball;
 
 var divisionHeight=300;
@@ -49,24 +50,16 @@ function draw() {
   for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();  
   }
- 
-    if(ball!=null)
-    {
-       ball.display();
-  
-  
-    }
-
+  if(frameCount % 20 === 0){
+    particles.push(new Particle(random(width/2-30,width/2+30),10,10))
+  }
    for (var k = 0; k < divisions.length; k++) 
    {
      divisions[k].display();
    }
- 
+   for (var j = 0; j < particles.length; j++) 
+   {
+     particles[j].display();
+   }
+
 }
-
-
-function mousePressed()
-{
-  ball=new Ball(mouseX, 10, 10, 10);  
-}
-
